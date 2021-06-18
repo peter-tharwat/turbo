@@ -8,6 +8,7 @@
 <body>
 	<a href="index.html"><h2>index</h2></a>
 	<a href="index2.html"><h2>index2</h2></a>
+	<h1>PAGE 1</h1>
 	<button id="button">click me</button>
 
 	<script type="text/javascript">
@@ -19,7 +20,7 @@
 			  url: href
 			})
 			  .done(function( msg ) {
-			  	parent.location.hash = href;
+			  	//parent.location.hash = href;
 			  	document.getElementById("html").innerHTML =msg;
 			  });
 
