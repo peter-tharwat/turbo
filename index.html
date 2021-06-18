@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<title></title>
+</head>
+<body>
+	<a href="file:///home/peter/Desktop/testing-turbo-links/index.html"><h2>index</h2></a>
+	<a href="file:///home/peter/Desktop/testing-turbo-links/index2.html"><h2>index2</h2></a>
+	<button id="button">click me</button>
+
+	<script type="text/javascript">
+		$('a').on('click',function(e){
+			e.preventDefault();
+
+			$.ajax({
+			  method: "GET",
+			  url: $(this).attr('href')
+			})
+			  .done(function( msg ) {
+			  	$(body).innerHtml(msg);
+			  });
+
+		});
+		$(document).on('click','#button',function(){
+			alert($(this).text());
+		});
+	</script>
+</body>
+</html>
