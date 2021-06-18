@@ -13,19 +13,19 @@
 	<script type="text/javascript">
 		$('a').on('click',function(e){
 			e.preventDefault();
-			
+			var href= $(this).attr('href');
 			$.ajax({
 			  method: "GET",
-			  url: $(this).attr('href')
+			  url: href
 			})
 			  .done(function( msg ) {
-			  	$(body).innerHtml(msg);
+			  	parent.location.hash = href;
+			  	document.getElementById("html").innerHTML =msg;
 			  });
 
 		});
-		$(document).on('#button','click',function(){
-
-			alert();
+		$(document).on('click','#button',function(){
+			alert($(this).text());
 		});
 	</script>
 </body>

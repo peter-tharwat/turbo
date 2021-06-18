@@ -19,9 +19,8 @@
 			  url: href
 			})
 			  .done(function( msg ) {
-			  	history.pushState({}, null, href);
+			  	parent.location.hash = href;
 			  	document.getElementById("html").innerHTML =msg;
-
 			  });
 
 		});
